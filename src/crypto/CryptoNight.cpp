@@ -61,7 +61,7 @@ bool CryptoNight::init(int algo, int variant)
     }
 
 #   ifndef XMRIG_NO_AEON
-    const int index = algo == Options::ALGO_CRYPTONIGHT_LITE ? (variant + 3) : (variant - 1);
+    const int index = algo == Options::ALGO_CRYPTONIGHT ? (variant + 3) : (variant - 1);
 #   else
     const int index = variant - 1;
 #   endif
