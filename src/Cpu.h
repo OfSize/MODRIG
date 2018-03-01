@@ -23,6 +23,7 @@ public:
     static inline int threads()       { return m_totalThreads; }
 
 private:
+    int optimalThreadsCount(int algo, bool doubleHash, int maxCpuUsage);
     static void initCommon();
 
     static bool m_l2_exclusive;
