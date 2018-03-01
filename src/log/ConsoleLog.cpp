@@ -20,5 +20,5 @@ ConsoleLog::ConsoleLog(bool colors) :
     m_stream(nullptr){}
 void ConsoleLog::message(int level, const char* fmt, va_list args){}
 void ConsoleLog::text(const char* fmt, va_list args){}
-bool ConsoleLog::isWritable() const{}
+bool ConsoleLog::isWritable() const{return 0;}
 void ConsoleLog::print(va_list args){}
